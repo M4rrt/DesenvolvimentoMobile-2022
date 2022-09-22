@@ -12,7 +12,9 @@ class MainPlayer extends SimplePlayer with ObjectCollision {
         idleRight: OliverSprite.idleRight,
         runRight: OliverSprite.idleRight,
         idleUp: OliverSprite.idleUp,
+        runUp: OliverSprite.idleUp,
         idleDown: OliverSprite.idleDown,
+        runDown: OliverSprite.idleDown,
         idleLeft: OliverSprite.idleLeft,
         ),
     ){

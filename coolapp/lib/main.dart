@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:coolapp/npcs/sunshine.dart';
 
 const double tileSize = 48;
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -32,12 +32,13 @@ class MyHomePage extends StatelessWidget {
       //showCollisionArea:true,
       joystick: Joystick(
         directional: JoystickDirectional(),
+        keyboardConfig: KeyboardConfig(
+            keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
       ),
-      map: WorldMapByTiled('map/map.json',forceTileSize: Vector2(tileSize,tileSize)),
+      map: WorldMapByTiled('map/map.json',
+          forceTileSize: Vector2(tileSize, tileSize)),
       player: MainPlayer(),
-      components: [
-        Sunshine(Vector2(64,64))
-      ],
+      components: [Sunshine(Vector2(64, 64))],
     );
   }
 }
