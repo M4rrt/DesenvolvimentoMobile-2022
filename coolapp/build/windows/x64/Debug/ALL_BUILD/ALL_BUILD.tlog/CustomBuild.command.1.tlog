@@ -1,0 +1,10 @@
+^D:\.TRABALHOS ADS\LEARNFLUTTER\COOLAPP\WINDOWS\CMAKELISTS.TXT
+setlocal
+"D:\Microsoft Visual Studio\2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SD:/.TRABALHOS ADS/LearnFlutter/coolapp/windows" "-BD:/.TRABALHOS ADS/LearnFlutter/coolapp/build/windows" --check-stamp-file "D:/.TRABALHOS ADS/LearnFlutter/coolapp/build/windows/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
