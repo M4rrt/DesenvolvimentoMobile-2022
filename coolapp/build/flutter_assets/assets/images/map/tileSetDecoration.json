@@ -181,11 +181,11 @@
          "id":449
         }, 
         {
+         "class":"above",
          "id":498,
          "objectgroup":
             {
              "draworder":"index",
-             "id":6,
              "name":"",
              "objects":[
                     {
@@ -278,7 +278,6 @@
          "objectgroup":
             {
              "draworder":"index",
-             "id":2,
              "name":"",
              "objects":[
                     {
@@ -305,7 +304,6 @@
          "objectgroup":
             {
              "draworder":"index",
-             "id":4,
              "name":"",
              "objects":[
                     {

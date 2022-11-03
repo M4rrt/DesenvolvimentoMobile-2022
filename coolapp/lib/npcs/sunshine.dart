@@ -23,8 +23,8 @@ class Sunshine extends SimpleNpc with ObjectCollision {
           CollisionConfig(
             collisions: [
               CollisionArea.rectangle(
-                size: Vector2(32,48),
-                align: Vector2(8,0)
+                size: Vector2(32,32),
+                align: Vector2(8,16)
               )
             ]
           ),
