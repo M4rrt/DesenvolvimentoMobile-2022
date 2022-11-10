@@ -1,10 +1,7 @@
 import 'package:bonfire/bonfire.dart';
+import 'mesa_sprite.dart';
 
 class Mesa extends GameDecoration {
-  Mesa(Vector2 position, sprite,size)
-      :  super.withSprite(
-        sprite: sprite,
-        position: position,
-        size: size
-      );
+  Mesa(Vector2 position)
+      :  super.withAnimation(animation: MesaSprite.Mesa, position: position, size: Vector2(32, 32));
 }

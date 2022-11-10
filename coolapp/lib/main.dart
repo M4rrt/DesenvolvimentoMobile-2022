@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           forceTileSize: Vector2(tileSize, tileSize)),
       player: MainPlayer(),
       components: [Sunshine(Vector2(64, 64))],
-      decorations: [Mesa(Vector2(64, 64),"Actor3.png",64)],
+      decorations: [Mesa(Vector2(64, 64))],
     );
   }
 }
