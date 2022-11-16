@@ -39,8 +39,8 @@ class MyHomePage extends StatelessWidget {
       map: WorldMapByTiled('map/map.json',
           forceTileSize: Vector2(tileSize, tileSize)),
       player: MainPlayer(),
-      components: [Sunshine(Vector2(64, 64))],
-      decorations: [Mesa(Vector2(64, 64))],
+      components: [Sunshine(Vector2(tileSize*0, tileSize*8))],
+      decorations: [Mesa(Vector2(tileSize*3, tileSize*3)),Mesa(Vector2(tileSize*5,tileSize*13)),Mesa(Vector2(tileSize*9,tileSize*8)),Mesa(Vector2(tileSize*12, tileSize*3)),Mesa(Vector2(tileSize*15,tileSize*15))],
     );
   }
 }
