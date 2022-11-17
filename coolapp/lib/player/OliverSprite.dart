@@ -11,17 +11,17 @@ class OliverSprite {
       SpriteAnimationData.sequenced(
         amount: 4,
         stepTime: 0.25,
-        textureSize: Vector2(48,48),
+        textureSize: Vector2(24,24),
         texturePosition: Vector2(texturePosition,texturePosition2)
       ),
     );
   }
   static Future<SpriteAnimation> get idleDown => 
-  _sequenceImage('OliverSheet.png', 0, 0);
+  _sequenceImage('Oliver.png', 0, 0);
   static Future<SpriteAnimation> get  idleUp => 
-  _sequenceImage('OliverSheet.png', 0, 48);
+  _sequenceImage('Oliver.png', 0, 24);
   static Future<SpriteAnimation> get idleLeft => 
-  _sequenceImage('OliverSheet.png', 0, 96);
+  _sequenceImage('Oliver.png', 0, 48);
   static Future<SpriteAnimation> get idleRight => 
-  _sequenceImage('OliverSheet.png', 0, 144);
+  _sequenceImage('Oliver.png', 0, 72);
 }
