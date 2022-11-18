@@ -15,7 +15,10 @@ class Objeto extends GameDecoration {
       /*
         Animation -> Future<SpriteAnimation> instanciada no arquivo mesa_sprite.dart
         position  -> é a posição no mapa em que essa mesa existirá no mapa
-        size      -> é o tamanho dessa game decoration ela tem 64x64 pixels oque é equivalente a 4 quadrados  
+        size      -> é o tamanho dessa game decoration ela tem 128x128 pixels oque é equivalente a 4 quadrados  
       */
-      :  super.withAnimation(animation: MesaSprite.mesa, position: position, size: Vector2(64, 64));
+      : super.withAnimation(
+            animation: MesaSprite.mesa,
+            position: position,
+            size: Vector2(128, 128));
 }
