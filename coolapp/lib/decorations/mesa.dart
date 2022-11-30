@@ -33,4 +33,7 @@ class Objeto extends GameDecoration with ObjectCollision {
        setnome(String nome) {
           this.nome = nome;
       }
+      String getName(){
+        return nome;
+      }
 }

@@ -41,7 +41,7 @@ class MyHomePage extends StatelessWidget {
     return AppResponsiveWidget(
         child :BonfireWidget(
         // remover o comentário abaixo para mostrar as áreas de colisão
-        //showCollisionArea: true,
+        showCollisionArea: true,
         joystick: Joystick(
           // componente de movimentação do personagem principal
           directional: JoystickDirectional(),
@@ -50,20 +50,20 @@ class MyHomePage extends StatelessWidget {
         ),
         map: WorldMapByTiled('map/map.json',
             forceTileSize: Vector2(tileSize, tileSize)),
-        player: MainPlayer(),
+        player: MainPlayer(Vector2(tileSize*10,tileSize*5)),
         cameraConfig: CameraConfig(
           moveOnlyMapArea: true,
           zoom: 2,
           smoothCameraEnabled: true,
           smoothCameraSpeed: 2,
         ),
-        components: [Sunshine(Vector2(tileSize * 0, tileSize * 8.5))],
+        components: [Sunshine(Vector2(tileSize * 5, tileSize * 8.5))],
         decorations: [
           Objeto.mesa(Vector2(tileSize * 3, tileSize * 3), "mesa 1"),
-          Objeto.mesa(Vector2(tileSize * 5, tileSize * 13), "mesa 1"),
-          Objeto.mesa(Vector2(tileSize * 9, tileSize * 8), "mesa 1"),
-          Objeto.mesa(Vector2(tileSize * 12, tileSize * 3), "mesa 1"),
-          Objeto.mesa(Vector2(tileSize * 15, tileSize * 15), "mesa 1")
+          Objeto.mesa(Vector2(tileSize * 5, tileSize * 13), "mesa 2"),
+          Objeto.mesa(Vector2(tileSize * 9, tileSize * 8), "mesa 3"),
+          Objeto.mesa(Vector2(tileSize * 12, tileSize * 3), "mesa 4"),
+          Objeto.mesa(Vector2(tileSize * 15, tileSize * 15), "mesa 5")
         ],
       )
     );

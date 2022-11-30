@@ -7,9 +7,9 @@ import 'OliverSprite.dart';
 
 // classe de personagem principal
 class MainPlayer extends SimplePlayer with ObjectCollision {
-  MainPlayer()
+  MainPlayer(Vector2 position)
       : super(
-          position: Vector2(0, 320),
+          position: position,
           size: Vector2(64, 64),
           speed: 350,
           //
@@ -32,11 +32,10 @@ class MainPlayer extends SimplePlayer with ObjectCollision {
   @override
   bool onCollision(GameComponent component, bool active) {
     // TODO: implement onCollision
-    if(component is Objeto) {
-      print("player: $component");
+    if(component is Sunshine) {
+      print(component.isOnTable());
     }
-    print(component);
-    print(active);
+    print("oliver hits $component $active");
     return super.onCollision(component, active);
   }
 }

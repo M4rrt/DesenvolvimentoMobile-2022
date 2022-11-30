@@ -1,27 +1,31 @@
+import 'dart:html';
+
 import 'package:bonfire/bonfire.dart';
 import 'package:coolapp/decorations/mesa.dart';
 import 'package:coolapp/player/Player.dart';
+import 'package:flutter/cupertino.dart';
 
 
 import 'npcSprite.dart';
 
 class Sunshine extends SimpleNpc with ObjectCollision {
   bool canMove =  true;
-  bool isOnTable = false;
+  bool onTable = false;
   Sunshine(Vector2 position)
       : super(
           position: position, //required
           size: Vector2(64, 64), //required
           speed: 100,
-          initDirection: Direction.right,
+          initDirection: Direction.down,
           animation: SimpleDirectionAnimation(
-            idleLeft: NpcSprite.idleLeft,
             idleRight: NpcSprite.idleRight, //required
-            runLeft: NpcSprite.idleLeft,
-            runRight: NpcSprite.idleRight, //required
-            idleUp: NpcSprite.idleUp,
+            runRight: NpcSprite.runRight, //required
+            idleLeft: NpcSprite.idleLeft,
+            runLeft: NpcSprite.runLeft,
             idleDown: NpcSprite.idleDown,
-            runDown: NpcSprite.runDown
+            runDown: NpcSprite.runDown,
+            idleUp: NpcSprite.idleUp,
+            runUp: NpcSprite.runUp
           ),
         ) {
     setupCollision(
@@ -33,16 +37,29 @@ class Sunshine extends SimpleNpc with ObjectCollision {
   @override
   void update(double dt){
     if(canMove){
-      moveRight(100);
+      moveRight(speed);
+    }else { 
+
     }
     super.update(dt);
   }
   @override
   bool onCollision(GameComponent component, bool active) {
-    canMove = false;
     if(component is Objeto && active == true){
-        print("Shunshine hits $component"); 
+        canMove= false;
+        String nome = component.getName();
+        if(nome == "mesa 3"){
+          onTable = true;
+          print("Sunshine está na mesa ? $onTable");
+
+        }
     }
-    return active;
+     return super.onCollision(component, active);
   }
+
+
+  bool isOnTable(){ 
+    return onTable;
+  } 
+  
 }
