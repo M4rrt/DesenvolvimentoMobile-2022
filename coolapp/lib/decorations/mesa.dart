@@ -10,8 +10,9 @@ import 'mesa_sprite.dart';
 Classe Objeto feita para cria uma Game decoration
 Vector2 position -> é a posição no mapa em que essa Objeto existirá no mapa 
 */
-class Objeto extends GameDecoration {
-  Objeto.mesa(Vector2 position)
+class Objeto extends GameDecoration with ObjectCollision {
+  String nome ="";
+  Objeto.mesa(Vector2 position, String name)
       /*
         Animation -> Future<SpriteAnimation> instanciada no arquivo mesa_sprite.dart
         position  -> é a posição no mapa em que essa mesa existirá no mapa
@@ -20,5 +21,16 @@ class Objeto extends GameDecoration {
       : super.withAnimation(
             animation: MesaSprite.mesa,
             position: position,
-            size: Vector2(128, 128));
+            size: Vector2(128, 128),
+      ) {
+        setupCollision(
+          CollisionConfig(collisions: [
+             CollisionArea.rectangle(size: Vector2(128, 128), align: Vector2(0, 0))
+          ]));
+        setnome(name);
+      }
+      
+       setnome(String nome) {
+          this.nome = nome;
+      }
 }
