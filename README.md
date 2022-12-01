@@ -22,8 +22,8 @@
 ## Trabalhos Futuros
 	Para o futuro, desejamos implementar as seguintes funcionalidades ao jogo:
 		- Adicionar a cozinha do restaurante: Uma região do mapa onde serão preparados todos os pedidos que os cliente fizerem. Na cozinha terá um estoque dos produtos que será reposto a cada periodo de tempo;
-		- Implementar a mecânica de pedidos: O Cliente (NPC) solitará algum pedido ao jogador que deverá ir até a cozinha num determinado tempo. Caso o pedido seja entregue dentro do prazo, o jogador marcará pontos, de acordo com o tempo do atendimento. Do contrário receberá um strike, ao se marcar três strikes é fim de jogo;
-		- Para os mais competitivos, também será incrementado o registro de placar, onde ficarrá apontado as três melhores pontuações;
+		- Implementar a mecânica de pedidos: O Cliente (NPC) solicitará algum pedido ao jogador que deverá ir até a cozinha num determinado tempo. Caso o pedido seja entregue dentro do prazo, o jogador marcará pontos, de acordo com o tempo do atendimento. Do contrário receberá um strike, ao se marcar três strikes é fim de jogo;
+		- Para os mais competitivos, também será incrementado o registro de placar, onde ficará apontado as três melhores pontuações;
 		- Correção de bugs nas animações.
 
 ## Licenças
