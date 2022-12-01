@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Save The Princes',
+      title: 'Kittychen',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,   
       ),
@@ -41,7 +42,7 @@ class MyHomePage extends StatelessWidget {
     return AppResponsiveWidget(
         child :BonfireWidget(
         // remover o comentário abaixo para mostrar as áreas de colisão
-        showCollisionArea: true,
+        //showCollisionArea: true,
         joystick: Joystick(
           // componente de movimentação do personagem principal
           directional: JoystickDirectional(),
@@ -50,14 +51,12 @@ class MyHomePage extends StatelessWidget {
         ),
         map: WorldMapByTiled('map/map.json',
             forceTileSize: Vector2(tileSize, tileSize)),
-        player: MainPlayer(Vector2(tileSize*10,tileSize*5)),
+        player: MainPlayer(Vector2(tileSize*13,tileSize*8)),
         cameraConfig: CameraConfig(
           moveOnlyMapArea: true,
           zoom: 2,
-          smoothCameraEnabled: true,
-          smoothCameraSpeed: 2,
         ),
-        components: [Sunshine(Vector2(tileSize * 5, tileSize * 8.5))],
+        components: [Sunshine(Vector2(tileSize * 1, tileSize * 8.5))],
         decorations: [
           Objeto.mesa(Vector2(tileSize * 3, tileSize * 3), "mesa 1"),
           Objeto.mesa(Vector2(tileSize * 5, tileSize * 13), "mesa 2"),

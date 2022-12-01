@@ -2,16 +2,19 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:coolapp/npcs/sunshine.dart';
 import 'package:coolapp/decorations/mesa.dart';
+import 'package:flutter/foundation.dart';
 // importando a sprite do nosso personagem principal
 import 'OliverSprite.dart';
 
 // classe de personagem principal
 class MainPlayer extends SimplePlayer with ObjectCollision {
+  bool npcHit = false;
+  bool stopMove = false;
   MainPlayer(Vector2 position)
       : super(
           position: position,
           size: Vector2(64, 64),
-          speed: 350,
+          speed: 200,
           //
           animation: SimpleDirectionAnimation(
             idleRight: OliverSprite.idleRight,
@@ -33,9 +36,19 @@ class MainPlayer extends SimplePlayer with ObjectCollision {
   bool onCollision(GameComponent component, bool active) {
     // TODO: implement onCollision
     if(component is Sunshine) {
-      print(component.isOnTable());
+      if(!npcHit){
+        print("teste " + component.isOnTable().toString() + " " + active.toString() );
+        npcHit = true;
+      }
     }
-    print("oliver hits $component $active");
     return super.onCollision(component, active);
+  }
+  bool canMove(bool status){
+    if(!status){ 
+      speed = 0;
+    } else { 
+      speed = 200;
+    }
+    return status;
   }
 }
